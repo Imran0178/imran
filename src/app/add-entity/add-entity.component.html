@@ -1,0 +1,35 @@
+<div class="container card">
+    <form (submit)="createEntity()">
+        <div class="row md-3">
+            <label for="className">Class Name : &nbsp;</label>
+                <input type="text" [(ngModel)]="newEntity.className" name="className"> &nbsp;
+                <span>Start with a Capital Letter</span>
+        </div>
+        <div class="varList" *ngFor="let variable of variableList">
+            <div class="row">
+                <label for="className" >isNestedClass? : &nbsp;</label>
+                <input type="checkbox" [(ngModel)]="variable.nestedClass" name="isNestedClass"> &nbsp;
+                <small>check the box if Type = Not DataType</small>
+            </div>
+            <div class="row">
+                <label for="className" >relationship : &nbsp;</label>
+                <select type="" [(ngModel)]="variable.relationShip" name="relationShip">
+                    <option value="ManyToOne">ManyToOne</option>
+                    <option value="ManyToMany">ManyToMany</option>
+                    <option value="OneToMany">OneToMany</option>
+                </select>
+            </div>
+            <div class="row">
+                <label for="className" >Variable type : &nbsp;</label>
+                <input type="text" [(ngModel)]="variable.varType" name="varType"> &nbsp;
+            </div>
+            <div class="row">
+                <label for="className" >Variable Name : &nbsp;</label>
+                <input type="text" [(ngModel)]="variable.varName" name="varName"> &nbsp;
+            </div>
+        </div>
+        <button (click)="addVar()">Add Variable</button>
+        <button type="submit"
+        > submit</button>
+    </form>
+</div>
